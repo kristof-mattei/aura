@@ -1,3 +1,10 @@
+## [1.14.6](https://github.com/mezmo/aura/compare/v1.14.5...v1.14.6) (2026-03-04)
+
+
+### Chores
+
+* **release**: fix the release version numbers [baf28be](https://github.com/mezmo/aura/commit/baf28becab4470ba5bbd05573810dddb9dd633d5) - Justin Gross
+
 # 1.0.0 (2026-03-04)
 
 
