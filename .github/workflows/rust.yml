@@ -65,33 +65,13 @@ jobs:
         run: |
           cargo fetch --locked
 
-  changes:
-    name: Detect changes
-    runs-on: ubuntu-slim
-    permissions:
-      contents: read
-      pull-requests: read
-    outputs:
-      rust: ${{ steps.filter.outputs.rust }}
-    steps:
-      - *checkout
-
-      - name: Check if we actually made changes
-        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
-        id: filter
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          filters: .github/file-filters.yml
-
   cargo-build:
     name: Cargo build
     runs-on: ubuntu-latest
     needs:
-      - changes
       - warm-up-cache
     if: |
-      github.event_name == 'pull_request' &&
-      fromJSON(needs.changes.outputs.rust) == true
+      github.event_name == 'pull_request'
     steps:
       - *checkout
 
@@ -137,11 +117,9 @@ jobs:
     name: Cargo fmt
     runs-on: ubuntu-latest
     needs:
-      - changes
       - warm-up-cache
     if: |
-      github.event_name == 'pull_request' &&
-      fromJSON(needs.changes.outputs.rust) == true
+      github.event_name == 'pull_request'
     steps:
       - *checkout
 
@@ -289,11 +267,9 @@ jobs:
     name: Cargo clippy (and report)
     runs-on: ubuntu-latest
     needs:
-      - changes
       - warm-up-cache
     if: |
-      github.event_name == 'pull_request' &&
-      fromJSON(needs.changes.outputs.rust) == true
+      github.event_name == 'pull_request'
     steps:
       - *checkout
 
@@ -319,7 +295,6 @@ jobs:
     # combination of upstream skip and success: success
     runs-on: ubuntu-slim
     needs:
-      - changes
       - cargo-build
       - cargo-clippy-and-report
       - cargo-fmt
