@@ -480,7 +480,7 @@ dependencies = [
 
 [[package]]
 name = "aura-test-utils"
-version = "1.0.0"
+version = "1.14.6"
 dependencies = [
  "reqwest",
  "serde",

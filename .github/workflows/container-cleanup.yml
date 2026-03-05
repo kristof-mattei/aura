@@ -1,0 +1,48 @@
+name: Container Registry Cleanup
+
+on:
+  schedule:
+    # Every day at 20:00 UTC (8 PM)
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: read
+
+jobs:
+  cleanup-containers:
+    name: Cleanup containers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          show-progress: false
+
+      - name: Run container cleanup
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./.github/scripts/cleanup-containers.sh \
+            --user ${{ github.repository_owner }} \
+            --package ${{ github.event.repository.name }} \
+            --yes
+
+  cleanup-container-build-cache:
+    name: Cleanup container build cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          show-progress: false
+
+      - name: Run container build cache cleanup
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./.github/scripts/cleanup-container-build-cache.sh \
+            --user ${{ github.repository_owner }} \
+            --package ${{ github.event.repository.name }}-cache \
+            --yes
