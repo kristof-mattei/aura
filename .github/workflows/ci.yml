@@ -58,36 +58,11 @@ jobs:
       id-token: write
       pull-requests: write
 
-  changes:
-    name: Detect changes
-    runs-on: ubuntu-slim
-    permissions:
-      contents: read
-      pull-requests: read
-    outputs:
-      docker: ${{ steps.filter.outputs.docker }}
-      rust: ${{ steps.filter.outputs.rust }}
-    steps:
-      - &checkout
-        name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          show-progress: false
-
-      - name: Check if we actually made changes
-        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
-        id: filter
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          filters: .github/file-filters.yml
-
   calculate-version:
     name: Calculate version
     runs-on: ubuntu-slim
     permissions:
       contents: read
-    needs:
-      - changes
     outputs:
       version: ${{ steps.version.outputs.version }}
     if: |
@@ -248,7 +223,6 @@ jobs:
       - calculate-version
       - architectures
       - docker-prepare-variables
-      - changes
     steps:
       - *checkout
 
@@ -547,7 +521,6 @@ jobs:
     # combination of upstream skip and success: success
     runs-on: ubuntu-slim
     needs:
-      - changes
       - calculate-version
       - docker-prepare-variables
       - rust-build
