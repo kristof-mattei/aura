@@ -39,7 +39,7 @@ jobs:
 
           version=$(git-cliff --bumped-version --github-token ${{ secrets.GITHUB_TOKEN }})
 
-          commit_message="chore(release): ${version} [skip ci]"
+          commit_message="chore(release): ${version}"
 
           git-cliff --output CHANGELOG.md --bump --with-commit "${commit_message}" --github-token ${{ secrets.GITHUB_TOKEN }}
 
