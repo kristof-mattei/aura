@@ -1,4 +1,17 @@
 <!-- header goes here -->
+## [1.16.0](https://github.com/mezmo/aura/compare/v1.15.0..v1.16.0) - 2026-03-07
+
+### 🚀 Features
+
+- Something ([`399f6fe`](https://github.com/mezmo/aura/commit/399f6fe0fe2eeee941df81639250f07fe63599f9))
+
+### 🐛 Bug Fixes
+
+- Cleanup prerelease ([`dc053b7`](https://github.com/mezmo/aura/commit/dc053b7cbfefa3dcc32a05b2a03cc800137c66c1))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* V1.16.0 [skip ci]
 ## [1.15.0](https://github.com/mezmo/aura/compare/v1.14.6..v1.15.0) - 2026-03-07
 
 ### 🚀 Features
@@ -18,7 +31,7 @@
 - *(ci)* Build container with GitHub Actions by @kristof-mattei in #13 ([`73b3442`](https://github.com/mezmo/aura/commit/73b3442b6ff0098873a519653e67ba066fde67d2))
 - *(ci)* Releases ([`7f885ae`](https://github.com/mezmo/aura/commit/7f885aebea0c3c3625afba3298f9519e3855d26c))
 - *(release)* 1.14.7 [skip ci] by @logdnabot ([`016c919`](https://github.com/mezmo/aura/commit/016c919da88653945a2bf0ae6a15fdfae43ce2f4))
-- *(release)* V1.15.0
+- *(release)* V1.15.0 ([`596af5d`](https://github.com/mezmo/aura/commit/596af5d69a6031f167e62de8fc3847167256755e))
 - Rust 1.93.1, and run Clippy by @kristof-mattei in #10 ([`755da80`](https://github.com/mezmo/aura/commit/755da80975aceb11f9e89e7720a5ba92a2208109))
 - Merge ([`b95b7f6`](https://github.com/mezmo/aura/commit/b95b7f6494452c0b36d0024657722ad45a61926a))
 - Run on pull request target ([`1f0bb31`](https://github.com/mezmo/aura/commit/1f0bb31d0389567c11a5883bc4a2461b700d502d))
