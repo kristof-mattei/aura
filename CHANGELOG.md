@@ -1,4 +1,17 @@
 <!-- header goes here -->
+## [1.17.0](https://github.com/mezmo/aura/compare/v1.16.0..v1.17.0) - 2026-03-07
+
+### 🚀 Features
+
+- Last release was v1.16.0 ([`835e956`](https://github.com/mezmo/aura/commit/835e9563ea8cf5f0b467cabe7b915ad26fc722ea))
+
+### 🐛 Bug Fixes
+
+- Remove ([`0e25e2f`](https://github.com/mezmo/aura/commit/0e25e2fd999b8a55db47d7367b32034b56d449ec))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* V1.17.0
 ## [1.16.0](https://github.com/mezmo/aura/compare/v1.15.0..v1.16.0) - 2026-03-07
 
 ### 🚀 Features
@@ -11,7 +24,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* V1.16.0 [skip ci]
+- *(release)* V1.16.0 [skip ci] ([`c11ada4`](https://github.com/mezmo/aura/commit/c11ada4d5ff0a4233644bb216716a8bc3d34c826))
 ## [1.15.0](https://github.com/mezmo/aura/compare/v1.14.6..v1.15.0) - 2026-03-07
 
 ### 🚀 Features
