@@ -1,3 +1,17 @@
+## [1.14.8](https://github.com/mezmo/aura/compare/v1.14.7...v1.14.8) (2026-03-10)
+
+
+### Bug Fixes
+
+* **ci**: use public mezmo/aura-mock-mcp for tests [670c02e](https://github.com/mezmo/aura/commit/670c02edfd5865ccb554e47f84857130274149c0) - Dominic McAllister [LOG-23365](https://logdna.atlassian.net/browse/LOG-23365)
+* **tests**: target available build [c716d81](https://github.com/mezmo/aura/commit/c716d81b7b0d3395173eb5a8d2a71d673cc15597) - Dominic McAllister [LOG-23391](https://logdna.atlassian.net/browse/LOG-23391)
+
+
+### Chores
+
+* **ci**: build container with GitHub Actions [73b3442](https://github.com/mezmo/aura/commit/73b3442b6ff0098873a519653e67ba066fde67d2) - Kristof Mattei
+* Rust 1.93.1, and run Clippy [755da80](https://github.com/mezmo/aura/commit/755da80975aceb11f9e89e7720a5ba92a2208109) - Kristof Mattei
+
 ## [1.14.7](https://github.com/mezmo/aura/compare/v1.14.6...v1.14.7) (2026-03-05)
 
 
