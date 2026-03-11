@@ -148,10 +148,6 @@ pipeline {
               // Running any cargo command will cause rustup to install the toolchain if not present
 
               sh '''
-              rm ${HOME}/.cargo/bin/cargo-fmt
-              rm ${HOME}/.cargo/bin/rust-analyzer
-              rm ${HOME}/.cargo/bin/rustfmt
-
               rustup self update
               rustup update
               rustup show active-toolchain || rustup toolchain install
